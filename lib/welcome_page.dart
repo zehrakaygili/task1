@@ -1,50 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'home_page.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Body(),
-    );
-  }
+  State<WelcomePage> createState() => _WelcomePageState();
 }
 
-class Body extends StatelessWidget {
-  const Body({super.key});
-
+class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return const Background(
-      child: Column(
-        children: <Widget>[
-          SizedBox(
-            height: 200,
-          ),
-          Text(
-            "FREED",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 60),
-          ),
-          Text(
-            "Let's take a legal escape",
-            style: TextStyle(fontSize: 25),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          Button(),
-        ],
+    return Scaffold(
+      body: Background(
+        child: Column(
+          children: <Widget>[
+            const SizedBox(
+              height: 200,
+            ),
+            Text(
+              "FREED",
+              style: GoogleFonts.montserrat(
+                  fontSize: 60, fontWeight: FontWeight.w300),
+            ),
+            Text("Let's take a legal escape",
+                style: GoogleFonts.montserrat(
+                    fontSize: 25, fontWeight: FontWeight.w200)),
+            const SizedBox(
+              height: 40,
+            ),
+            const WelcomeButton(),
+          ],
+        ),
       ),
     );
   }
 }
 
-class Button extends StatelessWidget {
-  const Button({
+class WelcomeButton extends StatelessWidget {
+  const WelcomeButton({
     super.key,
   });
 
@@ -72,15 +68,15 @@ class Button extends StatelessWidget {
             ),
           );
         },
-        child: const Text(
-          "Let's Go",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-        ));
+        child: Text("Let's Go",
+            style: GoogleFonts.montserrat(
+                fontSize: 18, fontWeight: FontWeight.w400)));
   }
 }
 
 class Background extends StatelessWidget {
   final Widget child;
+
   const Background({
     super.key,
     required this.child,

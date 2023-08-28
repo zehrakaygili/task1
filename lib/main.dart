@@ -10,14 +10,10 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Welcome Screen',
-      theme: ThemeData(
-          fontFamily: 'Montserrat',
-          primaryColor: Color(0xFF009688),
-          scaffoldBackgroundColor: Colors.white),
-      home: const WelcomeScreen(),
+      home: WelcomePage(),
     );
   }
 }
