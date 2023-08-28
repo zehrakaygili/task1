@@ -10,23 +10,32 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF009688),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF009688),
+        backgroundColor: Color(0xFF009688),
         toolbarHeight: 40,
       ),
+      backgroundColor: const Color(0xFF009688),
       body: SafeArea(
         child: Column(
           children: [
             const SizedBox(
               height: 10,
             ),
-            const CircleAvatar(
-              radius: 60,
-              backgroundImage: AssetImage("assets/images/avatar.png"),
+            CircleAvatar(
+              minRadius: 40,
+              backgroundColor: Colors.transparent,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(
+                  "assets/images/avatar.png",
+                  height: 90,
+                  fit: BoxFit.scaleDown,
+                ),
+              ),
             ),
             const SizedBox(
               height: 10,
@@ -82,6 +91,38 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.check_circle_outline,
+                size: 30,
+              ),
+              label: ""),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.check_circle_outline,
+                size: 30,
+              ),
+              label: ""),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.notifications_none,
+                size: 30,
+              ),
+              label: ""),
+        ],
+        currentIndex: _currentIndex,
+        selectedItemColor: Colors.grey[600],
+        unselectedItemColor: Colors.grey[900],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
