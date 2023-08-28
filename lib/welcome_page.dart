@@ -48,8 +48,8 @@ class WelcomeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0xFF303030),
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 55),
+          backgroundColor: const Color(0xFF303030),
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 55),
           shape: RoundedRectangleBorder(
             side: const BorderSide(
               color: Color(0xFF303030),
@@ -63,7 +63,7 @@ class WelcomeButton extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return HomePage();
+                return const HomePage();
               },
             ),
           );
