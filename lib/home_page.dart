@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:test1/widgets/date_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,20 +48,37 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20),
-                    ),
-                    color: Colors.white,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
                   ),
-                  child: Column(
-                    children: [
-                      Container(
-                        color: Colors.white,
-                      )
-                    ],
-                  )),
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      color: Colors.white,
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Escape Records",
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    DateCard(),
+                    DateCard(),
+                    DateCard(),
+                    DateCard(),
+                    DateCard(),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -81,10 +99,6 @@ class RequestLeaveButton extends StatelessWidget {
           backgroundColor: const Color(0xFF303030),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 45),
           shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: Color(0xFF303030),
-              width: 3,
-            ),
             borderRadius: BorderRadius.circular(30),
           ),
         ),

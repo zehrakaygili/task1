@@ -51,10 +51,6 @@ class WelcomeButton extends StatelessWidget {
           backgroundColor: const Color(0xFF303030),
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 55),
           shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              color: Color(0xFF303030),
-              width: 3,
-            ),
             borderRadius: BorderRadius.circular(30),
           ),
         ),
