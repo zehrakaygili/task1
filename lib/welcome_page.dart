@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:test1/widgets/background.dart';
 
-import 'home_page.dart';
+import 'widgets/welcome_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({super.key});
@@ -34,77 +35,6 @@ class _WelcomePageState extends State<WelcomePage> {
             const WelcomeButton(),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class WelcomeButton extends StatelessWidget {
-  const WelcomeButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF303030),
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 55),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
-          ),
-        ),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) {
-                return const HomePage();
-              },
-            ),
-          );
-        },
-        child: Text("Let's Go",
-            style: GoogleFonts.montserrat(
-                fontSize: 18, fontWeight: FontWeight.w400)));
-  }
-}
-
-class Background extends StatelessWidget {
-  final Widget child;
-
-  const Background({
-    super.key,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      width: double.infinity,
-      height: size.height,
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          Positioned(
-            top: 0,
-            right: 0,
-            child: Image.asset(
-              "assets/images/up.png",
-              width: size.width * 0.27,
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            child: Image.asset(
-              "assets/images/down.png",
-              width: size.width * 0.7,
-            ),
-          ),
-          child,
-        ],
       ),
     );
   }
