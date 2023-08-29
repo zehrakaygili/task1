@@ -18,7 +18,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: homePageBackgroundColor,
-        toolbarHeight: 40,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
+        actions: [
+          IconButton(onPressed: () {}, icon: Icon(Icons.notifications_none))
+        ],
       ),
       backgroundColor: homePageBackgroundColor,
       body: SafeArea(
