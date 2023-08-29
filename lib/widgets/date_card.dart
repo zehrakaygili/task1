@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test1/constants.dart';
 
 class DateCard extends StatelessWidget {
   const DateCard({
@@ -8,26 +9,28 @@ class DateCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xFFFAFAFA),
+      color: cardColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        splashColor: Color.fromARGB(255, 229, 240, 239),
+        splashColor: cardSplashColor,
         onTap: () {},
-        child: const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              "5 Mayıs 2021",
-              style: TextStyle(fontSize: 15),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                dateText,
+                style: dateTextStyle,
+              ),
             ),
-            SizedBox(
-              height: 65,
-              width: 65,
-            ),
-            Text(
-              "View",
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                "View",
+                style: viewTextStyle,
+              ),
             ),
           ],
         ),

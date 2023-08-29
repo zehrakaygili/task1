@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:test1/constants.dart';
 import 'package:test1/widgets/background.dart';
 
+import 'home_page.dart';
 import 'widgets/welcome_button.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -22,17 +23,31 @@ class _WelcomePageState extends State<WelcomePage> {
               height: 200,
             ),
             Text(
-              "FREED",
-              style: GoogleFonts.montserrat(
-                  fontSize: 60, fontWeight: FontWeight.w300),
+              welcomeTitleText,
+              style: welcomeTitleStyle,
             ),
-            Text("Let's take a legal escape",
-                style: GoogleFonts.montserrat(
-                    fontSize: 25, fontWeight: FontWeight.w200)),
+            Text(welcomeSubtitleText, style: welcomeSubtitleStyle),
             const SizedBox(
               height: 40,
             ),
-            const WelcomeButton(),
+            WelcomeButton(
+              vertical: 15,
+              horizontal: 50,
+              text: welcomeButtonText,
+              button: buttonColor,
+              textColor: buttonTextColor,
+              textstyle: welcomeButtonTextStyle,
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return const HomePage();
+                    },
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
